@@ -1,56 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221203 12:18:05.196" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221203 13:20:59.322" rpa="false" schemaversion="3">
 <suite id="s1" name="shopping cart BG 2" source="/home/adam/Dokumenty/Python-Kurs/RobotFramework/tests/shopping_cart_BG_2.robot">
-<test id="s1-t1" name="Adding Product To Shopping Catr Should Increase Products Amount" line="13">
+<test id="s1-t1" name="Adding Product To Shopping Catr Should Increase Products Amount" line="20">
+<kw name="Open Shop Webpage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221203 13:20:59.502" level="INFO">Opening browser 'firefox' to base url 'https://www.banggood.com/'.</msg>
+<msg timestamp="20221203 13:20:59.503" level="INFO">Firefox driver log is always forced to to: /home/adam/Dokumenty/Python-Kurs/RobotFramework/tests/geckodriver-18.log</msg>
+<status status="PASS" starttime="20221203 13:20:59.502" endtime="20221203 13:21:30.338"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221203 13:21:30.338" endtime="20221203 13:21:30.359"/>
+</kw>
+<status status="PASS" starttime="20221203 13:20:59.501" endtime="20221203 13:21:30.360"/>
+</kw>
 <kw name="Prepare Env">
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>screanshots_2</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20221203 12:18:05.366" endtime="20221203 12:18:05.367"/>
+<status status="PASS" starttime="20221203 13:21:30.361" endtime="20221203 13:21:30.362"/>
 </kw>
-<status status="PASS" starttime="20221203 12:18:05.366" endtime="20221203 12:18:05.367"/>
-</kw>
-<kw name="Open Shop Webpage">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.banggood.com/</arg>
-<arg>firefox</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221203 12:18:05.368" level="INFO">Opening browser 'firefox' to base url 'https://www.banggood.com/'.</msg>
-<msg timestamp="20221203 12:18:05.368" level="INFO">Firefox driver log is always forced to to: /home/adam/Dokumenty/Python-Kurs/RobotFramework/tests/geckodriver-3.log</msg>
-<status status="PASS" starttime="20221203 12:18:05.367" endtime="20221203 12:18:24.500"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221203 12:18:24.500" endtime="20221203 12:18:24.526"/>
-</kw>
-<status status="PASS" starttime="20221203 12:18:05.367" endtime="20221203 12:18:24.526"/>
+<status status="PASS" starttime="20221203 13:21:30.360" endtime="20221203 13:21:30.362"/>
 </kw>
 <kw name="Close Popups">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${POPUP_1}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221203 12:18:24.530" level="INFO">Clicking button '//html/body/div[10]/div/button[2]'.</msg>
-<status status="PASS" starttime="20221203 12:18:24.528" endtime="20221203 12:18:24.853"/>
+<msg timestamp="20221203 13:21:30.366" level="INFO">Clicking button '//html/body/div[10]/div/button[2]'.</msg>
+<status status="PASS" starttime="20221203 13:21:30.364" endtime="20221203 13:21:30.686"/>
 </kw>
-<status status="PASS" starttime="20221203 12:18:24.527" endtime="20221203 12:18:24.853"/>
+<status status="PASS" starttime="20221203 13:21:30.363" endtime="20221203 13:21:30.686"/>
+</kw>
+<kw name="Check Shopping Cart Ammount">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${CART_AMMOUNT}</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221203 13:21:30.689" level="INFO">Verifying element '//html/body/header/div[1]/div/div[4]/ul/li[2]/a/i[1]' contains exact text '0'.</msg>
+<status status="PASS" starttime="20221203 13:21:30.687" endtime="20221203 13:21:30.763"/>
+</kw>
+<status status="PASS" starttime="20221203 13:21:30.686" endtime="20221203 13:21:30.763"/>
 </kw>
 <kw name="Search Product">
-<msg timestamp="20221203 12:18:24.867" level="FAIL">No keyword with name 'Search Product' found.</msg>
-<status status="FAIL" starttime="20221203 12:18:24.866" endtime="20221203 12:18:24.867"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_BAR}</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221203 13:21:30.765" level="INFO">Typing text 'HOTA S6 AC' into text field '//html/body/header/div[1]/div/div[2]/form/input[1]'.</msg>
+<status status="PASS" starttime="20221203 13:21:30.764" endtime="20221203 13:21:30.834"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SEARCH_BAR}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20221203 13:21:30.836" level="INFO">Sending key(s) ('RETURN',) to //html/body/header/div[1]/div/div[2]/form/input[1] element.</msg>
+<msg timestamp="20221203 13:21:31.146" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20221203 13:21:31.146" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20221203 13:21:30.835" endtime="20221203 13:21:31.270"/>
+</kw>
+<status status="PASS" starttime="20221203 13:21:30.763" endtime="20221203 13:21:31.270"/>
 </kw>
 <kw name="Go To Product View">
-<status status="NOT RUN" starttime="20221203 12:18:24.876" endtime="20221203 12:18:24.876"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PRODUCT_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221203 13:21:31.271" level="INFO">Clicking element '//html/body/div[1]/div[1]/div[2]/div[3]/ul/li[2]/div/span[1]/a'.</msg>
+<msg timestamp="20221203 13:21:31.398" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screanshots_2/selenium-screenshot-16.png"&gt;&lt;img src="screanshots_2/selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221203 13:21:31.398" level="FAIL">Element with locator '//html/body/div[1]/div[1]/div[2]/div[3]/ul/li[2]/div/span[1]/a' not found.</msg>
+<status status="FAIL" starttime="20221203 13:21:31.270" endtime="20221203 13:21:31.401"/>
+</kw>
+<status status="FAIL" starttime="20221203 13:21:31.270" endtime="20221203 13:21:31.401"/>
 </kw>
 <kw name="Add Product To Shopping Cart">
-<status status="NOT RUN" starttime="20221203 12:18:24.884" endtime="20221203 12:18:24.884"/>
+<status status="NOT RUN" starttime="20221203 13:21:31.401" endtime="20221203 13:21:31.401"/>
+</kw>
+<kw name="Close Popup 2">
+<status status="NOT RUN" starttime="20221203 13:21:31.402" endtime="20221203 13:21:31.402"/>
 </kw>
 <kw name="Check If Shopping Cart Has 1 Product">
-<status status="NOT RUN" starttime="20221203 12:18:24.890" endtime="20221203 12:18:24.890"/>
+<status status="NOT RUN" starttime="20221203 13:21:31.402" endtime="20221203 13:21:31.402"/>
 </kw>
-<status status="FAIL" starttime="20221203 12:18:05.365" endtime="20221203 12:18:24.891">No keyword with name 'Search Product' found.</status>
+<status status="FAIL" starttime="20221203 13:20:59.500" endtime="20221203 13:21:31.402">Element with locator '//html/body/div[1]/div[1]/div[2]/div[3]/ul/li[2]/div/span[1]/a' not found.</status>
 </test>
 <doc>Automation test to add an item to shopping cart</doc>
-<status status="FAIL" starttime="20221203 12:18:05.197" endtime="20221203 12:18:24.893"/>
+<status status="FAIL" starttime="20221203 13:20:59.324" endtime="20221203 13:21:31.404"/>
 </suite>
 <statistics>
 <total>
