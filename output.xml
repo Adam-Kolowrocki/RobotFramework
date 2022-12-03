@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221129 22:37:45.994" rpa="false" schemaversion="3">
+<suite id="s1" name="shopping cart BG" source="/home/adam/Dokumenty/Python-Kurs/RobotFramework/tests/shopping_cart_BG.robot">
+<test id="s1-t1" name="Adding Product To Shopping Catr Should Increase Products Amount" line="16">
+<kw name="Open Shop Webpage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.banggood.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221129 22:37:46.164" level="INFO">Opening browser 'chrome' to base url 'https://www.banggood.com/'.</msg>
+<status status="PASS" starttime="20221129 22:37:46.164" endtime="20221129 22:37:49.451"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221129 22:37:49.451" endtime="20221129 22:37:49.616"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CLOSE_POPUP_WINDOW_1}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221129 22:37:49.618" level="INFO">Clicking button '//html/body/div[10]/div/button[2]'.</msg>
+<status status="PASS" starttime="20221129 22:37:49.616" endtime="20221129 22:37:50.027"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:46.164" endtime="20221129 22:37:50.027"/>
+</kw>
+<kw name="Prepare Env">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 22:37:50.028" endtime="20221129 22:37:50.028"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>screanshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221129 22:37:50.028" endtime="20221129 22:37:50.029"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:50.027" endtime="20221129 22:37:50.029"/>
+</kw>
+<kw name="Search Product">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEARCH_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 22:37:50.033" level="INFO">Clicking element '//header/div[1]/div[1]/div[2]/form[1]/input[1]'.</msg>
+<status status="PASS" starttime="20221129 22:37:50.031" endtime="20221129 22:37:51.300"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:50.030" endtime="20221129 22:37:51.300"/>
+</kw>
+<kw name="Input Product Name">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_INPUT}</arg>
+<arg>HOTA S6 AC</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 22:37:51.301" level="INFO">Typing text 'HOTA S6 AC' into text field '//header/div[1]/div[1]/div[2]/form[1]/input[1]'.</msg>
+<status status="PASS" starttime="20221129 22:37:51.301" endtime="20221129 22:37:52.952"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 22:37:52.954" level="INFO">Clicking element '//header/div[1]/div[1]/div[2]/form[1]/label[1]/input[1]'.</msg>
+<status status="PASS" starttime="20221129 22:37:52.952" endtime="20221129 22:37:56.151"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:51.300" endtime="20221129 22:37:56.152"/>
+</kw>
+<kw name="Go To Product View">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PRODUCT_CLICK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 22:37:56.154" level="INFO">Clicking element '//html/body/div[1]/div[1]/div[2]/div[3]/ul/li[2]/div/a[1]'.</msg>
+<status status="PASS" starttime="20221129 22:37:56.153" endtime="20221129 22:37:59.443"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:56.152" endtime="20221129 22:37:59.444"/>
+</kw>
+<kw name="Add Product To Shopping Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PRODUCT_CLICK_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 22:37:59.446" level="INFO">Clicking element '//html/body/div[2]/div/div[2]/div[2]/div[15]/a[2]'.</msg>
+<status status="PASS" starttime="20221129 22:37:59.445" endtime="20221129 22:38:01.351"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:59.444" endtime="20221129 22:38:01.351"/>
+</kw>
+<kw name="Close Popup Window">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20221129 22:38:01.352" endtime="20221129 22:38:01.877"/>
+</kw>
+<status status="PASS" starttime="20221129 22:38:01.352" endtime="20221129 22:38:01.878"/>
+</kw>
+<kw name="Check If Shopping Cart Has 1 Product">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${SECOND_CART_CHECH}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221129 22:38:01.879" level="INFO">Verifying element '//i[contains(text(),'1')]' contains exact text '1'.</msg>
+<status status="PASS" starttime="20221129 22:38:01.878" endtime="20221129 22:38:04.374"/>
+</kw>
+<status status="PASS" starttime="20221129 22:38:01.878" endtime="20221129 22:38:04.374"/>
+</kw>
+<status status="PASS" starttime="20221129 22:37:46.163" endtime="20221129 22:38:04.374"/>
+</test>
+<doc>Automated tests for shopping cart functionality</doc>
+<status status="PASS" starttime="20221129 22:37:45.995" endtime="20221129 22:38:04.375"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="shopping cart BG">shopping cart BG</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

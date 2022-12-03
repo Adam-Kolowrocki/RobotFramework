@@ -1,0 +1,17 @@
+1669757370140	geckodriver	INFO	Listening on 127.0.0.1:39399
+1669757370585	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "40889" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0d3nak"
+Gtk-Message: 22:29:30.619: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1669757371448	Marionette	INFO	Marionette enabled
+1669757371453	Marionette	INFO	Listening on port 36071
+Read port: 36071
+ATTENTION: default value of option mesa_glthread overridden by environment.
+WebDriver BiDi listening on ws://127.0.0.1:40889
+1669757371591	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0d3nak/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40889/devtools/browser/bbf0a916-dd7e-4b6e-a8c9-ee7318c8ddb5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pl.banggood.com."
+JavaScript error: , line 0: uncaught exception: Object
+1669757415816	Marionette	INFO	Stopped listening on port 36071
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
