@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221203 10:53:09.525" rpa="false" schemaversion="3">
+<suite id="s1" name="shopping cart BG" source="/home/adam/Dokumenty/Python-Kurs/RobotFramework/tests/shopping_cart_BG.robot">
+<test id="s1-t1" name="Adding Product To Shopping Catr Should Increase Products Amount" line="16">
+<kw name="Open Shop Webpage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.banggood.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221203 10:53:09.700" level="INFO">Opening browser 'chrome' to base url 'https://www.banggood.com/'.</msg>
+<status status="PASS" starttime="20221203 10:53:09.699" endtime="20221203 10:53:38.031"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221203 10:53:38.031" endtime="20221203 10:53:38.178"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CLOSE_POPUP_WINDOW_1}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221203 10:53:38.180" level="INFO">Clicking button '//html/body/div[10]/div/button[2]'.</msg>
+<status status="PASS" starttime="20221203 10:53:38.178" endtime="20221203 10:53:38.291"/>
+</kw>
+<status status="PASS" starttime="20221203 10:53:09.698" endtime="20221203 10:53:38.292"/>
+</kw>
+<kw name="Prepare Env">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>screanshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221203 10:53:38.298" endtime="20221203 10:53:38.300"/>
+</kw>
+<status status="PASS" starttime="20221203 10:53:38.297" endtime="20221203 10:53:38.300"/>
+</kw>
+<kw name="Search Product">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEARCH_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221203 10:53:38.304" level="INFO">Clicking element '//header/div[1]/div[1]/div[2]/form[1]/input[1]'.</msg>
+<msg timestamp="20221203 10:53:39.729" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screanshots/selenium-screenshot-2.png"&gt;&lt;img src="screanshots/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221203 10:53:39.730" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input data-spm="0000000aU" name="keywords" class="header-search" dpid="top_search_text_170412|home|1100100147" type="text" autocomplete="off" maxlength="150" value=""&gt; is not clickable at point (564, 30). Other element would receive the click: &lt;div data-spm="0000001Aw" class="modal modal-newbie" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=108.0.5359.94)
+Stacktrace:
+#0 0x55ccb94492a3 &lt;unknown&gt;
+#1 0x55ccb9207f77 &lt;unknown&gt;
+#2 0x55ccb924b0a9 &lt;unknown&gt;
+#3 0x55ccb924918d &lt;unknown&gt;
+#4 0x55ccb9246d88 &lt;unknown&gt;
+#5 0x55ccb9245f2d &lt;unknown&gt;
+#6 0x55ccb9239dc5 &lt;unknown&gt;
+#7 0x55ccb9264b32 &lt;unknown&gt;
+#8 0x55ccb923961f &lt;unknown&gt;
+#9 0x55ccb9264cfe &lt;unknown&gt;
+#10 0x55ccb927c47c &lt;unknown&gt;
+#11 0x55ccb9264903 &lt;unknown&gt;
+#12 0x55ccb9237ece &lt;unknown&gt;
+#13 0x55ccb9238fde &lt;unknown&gt;
+#14 0x55ccb949963e &lt;unknown&gt;
+#15 0x55ccb949cb79 &lt;unknown&gt;
+#16 0x55ccb947f89e &lt;unknown&gt;
+#17 0x55ccb949da83 &lt;unknown&gt;
+#18 0x55ccb9472505 &lt;unknown&gt;
+#19 0x55ccb94beca8 &lt;unknown&gt;
+#20 0x55ccb94bee36 &lt;unknown&gt;
+#21 0x55ccb94da333 &lt;unknown&gt;
+#22 0x7f492fed5b43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221203 10:53:38.303" endtime="20221203 10:53:39.732"/>
+</kw>
+<status status="FAIL" starttime="20221203 10:53:38.302" endtime="20221203 10:53:39.733"/>
+</kw>
+<kw name="Input Product Name">
+<status status="NOT RUN" starttime="20221203 10:53:39.733" endtime="20221203 10:53:39.733"/>
+</kw>
+<kw name="Go To Product View">
+<status status="NOT RUN" starttime="20221203 10:53:39.733" endtime="20221203 10:53:39.734"/>
+</kw>
+<kw name="Add Product To Shopping Cart">
+<status status="NOT RUN" starttime="20221203 10:53:39.736" endtime="20221203 10:53:39.736"/>
+</kw>
+<kw name="Close Popup Window">
+<status status="NOT RUN" starttime="20221203 10:53:39.736" endtime="20221203 10:53:39.736"/>
+</kw>
+<kw name="Check If Shopping Cart Has 1 Product">
+<status status="NOT RUN" starttime="20221203 10:53:39.737" endtime="20221203 10:53:39.737"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221203 10:53:39.742" endtime="20221203 10:53:39.837"/>
+</kw>
+<status status="FAIL" starttime="20221203 10:53:09.697" endtime="20221203 10:53:39.837">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input data-spm="0000000aU" name="keywords" class="header-search" dpid="top_search_text_170412|home|1100100147" type="text" autocomplete="off" maxlength="150" value=""&gt; is not clickable at point (564, 30). Other element would receive the click: &lt;div data-spm="0000001Aw" class="modal modal-newbie" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=108.0.5359.94)
+Stacktrace:
+#0 0x55ccb94492a3 &lt;unknown&gt;
+#1 0x55ccb9207f77 &lt;unknown&gt;
+#2 0x55ccb924b0a9 &lt;unknown&gt;
+#3 0x55ccb924918d &lt;unknown&gt;
+#4 0x55ccb9246d88 &lt;unknown&gt;
+#5 0x55ccb9245f2d &lt;unknown&gt;
+#6 0x55ccb9239dc5 &lt;unknown&gt;
+#7 0x55ccb9264b32 &lt;unknown&gt;
+#8 0x55ccb923961f &lt;unknown&gt;
+#9 0x55ccb9264cfe &lt;unknown&gt;
+#10 0x55ccb927c47c &lt;unknown&gt;
+#11 0x55ccb9264903 &lt;unknown&gt;
+#12 0x55ccb9237ece &lt;unknown&gt;
+#13 0x55ccb9238fde &lt;unknown&gt;
+#14 0x55ccb949963e &lt;unknown&gt;
+#15 0x55ccb949cb79 &lt;unknown&gt;
+#16 0x55ccb947f89e &lt;unknown&gt;
+#17 0x55ccb949da83 &lt;unknown&gt;
+#18 0x55ccb9472505 &lt;unknown&gt;
+#19 0x55ccb94beca8 &lt;unknown&gt;
+#20 0x55ccb94bee36 &lt;unknown&gt;
+#21 0x55ccb94da333 &lt;unknown&gt;
+#22 0x7f492fed5b43 &lt;unknown&gt;
+</status>
+</test>
+<doc>Automated tests for shopping cart functionality</doc>
+<status status="FAIL" starttime="20221203 10:53:09.526" endtime="20221203 10:53:39.841"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="shopping cart BG">shopping cart BG</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
