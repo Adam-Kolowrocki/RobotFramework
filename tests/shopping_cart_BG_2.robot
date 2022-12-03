@@ -19,37 +19,35 @@ ${ADD_TO_CART}        //html/body/div[2]/div/div[2]/div[2]/div[15]/a[2]
 Adding Product To Shopping Catr Should Increase Products Amount
     Prepare Env
     [Setup]    Open Shop Webpage
-    Check Popups Exists
-    Close Popup 1
+    Close Popup
     Check Shopping Cart Ammount Is 0
     Search Product
     Go To Product View
     Add Product To Shopping Cart
-#    Close Popup 2
     Check Shopping Cart Ammount Is 1
 #    [Teardown]    Close Browser
 
 *** Keywords ***
 Prepare Env
+    Set Selenium Speed              0.5
     Set Screenshot Directory        screanshots_2
 
 Open Shop Webpage
     Open Browser                    ${URL}      ${BROWSER}
     Maximize Browser Window
 
-Check Popups Exists
-    Run Keyword If    '${POPUP_1}'=='Thrue'    Close Popup ${POPUP_1}
-#     Run Keyword If    '${POPUP_1}'=='Thrue'    Close Popup ${POPUP_1}
+Close Popup
+    ${Result}=  Page Should Contain Element    ${POPUP_1}
+    Run Keyword If    '${Result}'=='PASS'    Click Button     ${POPUP_1}
+    ${Result_1}=  Page Should Contain Element    ${POPUP_2}
+    Run Keyword If    '${Result_1}'=='PASS'    Click Button    ${POPUP_2}
 
-Close Popup ${POPUP_1}
-    Click Button                     ${POPUP_1}
-
-Check Shopping Cart Ammount IS ${AMMOUNT}
+Check Shopping Cart Ammount Is ${AMMOUNT}
     Element Text Should Be        ${CART_AMMOUNT}        ${AMMOUNT}
 
 Search Product
     Input Text    ${SEARCH_BAR}    ${PRODUCT_NAME}
-    Press Keys    ${SEARCH_BAR}    RETURN
+    Click Element    ${CLICK_SEARCH}
 
 Go To Product View
     Click Element    ${PRODUCT_PAGE}
@@ -58,4 +56,5 @@ Add Product To Shopping Cart
     Click Element    ${ADD_TO_CART}
 
 Close Popup 2
-    Click Element    ${POPUP_3}
+    ${Result_2}=  Page Should Contain Element    ${POPUP_3}
+    Run Keyword If    '${Result_2}'=='PASS'    Click Button    ${POPUP_3}
